@@ -1,0 +1,60 @@
+import pyjokes
+import random
+
+# List of valid joke types that can be requested
+VALID_JOKE_TYPES = ('neutral', 'chuck', 'all')
+
+# Default joke type to use when no input is provided
+DEFAULT_JOKE_TYPE = 'all'
+
+
+def get_joke(joke_type: str = DEFAULT_JOKE_TYPE) -> str:
+    # Check if the provided joke type is valid
+    if joke_type not in VALID_JOKE_TYPES:
+        # If not valid, randomly select a valid joke type
+        joke_type = random.choice(VALID_JOKE_TYPES)
+        print(f"Invalid type. Using random type: {joke_type}")
+
+    # Return a joke from pyjokes using the specified (or corrected) type
+    return pyjokes.get_joke(language='en', category=joke_type)
+
+
+def display_menu() -> None:
+    # Show menu options to the user
+    print("\nOptions:")
+    print("1. Get a neutral joke")
+    print("2. Get a Chuck Norris joke")
+    print("3. Get any joke")
+    print("4. Exit")
+
+
+def handle_user_choice(choice: str) -> bool:
+    # Execute action based on user input
+    if choice == "1":
+        print(f"\n{get_joke('neutral')}")
+    elif choice == "2":
+        print(f"\n{get_joke('chuck')}")
+    elif choice == "3":
+        print(f"\n{get_joke('all')}")
+    elif choice == "4":
+        print("Goodbye!")
+        return False
+    else:
+        print("Invalid choice. Please try again.")
+
+    return True
+
+
+def main() -> None:
+    # Main program loop
+    print("\n=== Serohijos's Module ===")
+
+    should_continue = True
+    while should_continue:
+        display_menu()  # Show options
+        user_choice = input("Enter your choice (1-4): ")  
+        should_continue = handle_user_choice(user_choice)  # Act on choice
+
+
+# Start the program
+main()
