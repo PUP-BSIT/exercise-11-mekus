@@ -70,3 +70,5 @@ def main():
         
         # Handle the user's choice
         handle_user_choice(choice)
+
+main()
