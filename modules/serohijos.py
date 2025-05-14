@@ -2,6 +2,9 @@ import os
 import pyjokes
 import random
 
+# Set Language to english
+LANGUAGE = 'en'
+
 # List of valid joke types that can be requested
 VALID_JOKE_TYPES = ('neutral', 'chuck', 'all')
 
@@ -16,7 +19,7 @@ def get_joke(joke_type=DEFAULT_JOKE_TYPE):
         print(f"Invalid type. Using random type: {joke_type}")
 
     # Return a joke from pyjokes using the specified (or corrected) type
-    return pyjokes.get_joke(language='en', category=joke_type)
+    return pyjokes.get_joke(language=LANGUAGE, category=joke_type)
 
 def display_menu():
     # Show menu options to the user
