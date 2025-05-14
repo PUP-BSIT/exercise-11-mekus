@@ -45,8 +45,7 @@ def handle_user_choice(choice):
         case 4:
             modules.olazo_main()  
         case 5:
-            # TODO: Implement Serohijo's module
-            pass
+            modules.serohijos_main()
 
 def main():
     """Main function to run the Mekus modules."""
