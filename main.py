@@ -1,43 +1,72 @@
-# TODO: Implement the following modules and main logic for Exercise 11
+import modules
 
-# 1. agulto.py
-#    Assigned: Agulto
-#    - Create a module named 'agulto'.
-#    - Implement a function that performs any task (your choice).
-#    - Use at least one external module from PyPI.
-#    - Export the function for use in main.py.
+def display_menu():
+    """Displays the main menu for the Mekus modules."""
+    print(
+        "\n === Mekus Module Menu ==="
+        "\n [1] Agulto's Module"
+        "\n [2] Dazo's Module"
+        "\n [3] Jundam's Module"
+        "\n [4] Olazo's Module"
+        "\n [5] Serohijo's Module"
+        "\n [6] Exit"
+    )
 
-# 2. jundam.py
-#    Assigned: Jundam
-#    - Create a module named 'jundam'.
-#    - Implement a function that performs any task (your choice).
-#    - Use at least one external module from PyPI.
-#    - Export the function for use in main.py.
+def get_user_choice():
+    """Prompts the user for a choice and returns it."""
+    try:
+        # Prompt the user to enter a choice
+        choice = int(input("Select a module (1-6): "))
+        
+        # Check if the choice is valid
+        if 1 <= choice <= 6:
+            return choice  # Return the valid choice
+        else:
+            # If the choice is not valid, print an error message
+            print("Invalid choice! Please select a number between 1 and 6.")
+    except ValueError:
+        # Handle the case where the input is not a number
+        print("Invalid input! Please enter a number.")
+    
+    # Return None if the input is invalid
+    return None
 
-# 3. dazo.py
-#    Assigned: Dazo
-#    - Create a module named 'dazo'.
-#    - Implement a function that performs any task (your choice).
-#    - Use at least one external module from PyPI.
-#    - Export the function for use in main.py.
+def handle_user_choice(choice):
+    """Handles the user's choice and calls the corresponding module."""
+    match choice:
+        case 1:
+            # TODO: Implement Agulto's module
+            pass
+        case 2:
+            # TODO: Implement Dazo's module
+            pass
+        case 3:
+            # TODO: Implement Jundam's module
+            pass
+        case 4:
+            # TODO: Implement Olazo's module
+            pass
+        case 5:
+            # TODO: Implement Serohijo's module
+            pass
 
-# 4. olazo.py
-#    Assigned: Olazo
-#    - Create a module named 'olazo'.
-#    - Implement a function that performs any task (your choice).
-#    - Use at least one external module from PyPI.
-#    - Export the function for use in main.py.
-
-# 5. serohijos.py
-#    Assigned: Serohijos
-#    - Create a module named 'serohijos'.
-#    - Implement a function that performs any task (your choice).
-#    - Use at least one external module from PyPI.
-#    - Export the function for use in main.py.
-
-# 6. main.py
-#    Assigned: Everyone
-#    - Import all 5 modules: agulto, jundam, dazo, olazo, serohijos.
-#    - Call each member’s function in the main logic.
-#    - Ensure your code runs without errors.
-#    - Follow the coding guidelines.
+def main():
+    """Main function to run the Mekus modules."""
+    while True:
+        # Display the menu and get user choice
+        display_menu()
+        
+        # Get the user's choice
+        choice = get_user_choice()
+        
+        # If the choice is None (invalid), continue to the next iteration
+        if choice is None:
+            continue
+        
+        # If the choice is 6, exit the program
+        if choice == 6:
+            print("Exiting the program. Goodbye!")
+            break
+        
+        # Handle the user's choice
+        handle_user_choice(choice)
