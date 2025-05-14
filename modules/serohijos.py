@@ -27,29 +27,29 @@ def display_menu():
 
 def handle_user_choice(choice):
     # Execute action based on user input
-    if choice == "1":
-        print(f"\n{get_joke('neutral')}")
-    elif choice == "2":
-        print(f"\n{get_joke('chuck')}")
-    elif choice == "3":
-        print(f"\n{get_joke('all')}")
-    elif choice == "4":
-        print("Goodbye!")
-        return False
-    else:
-        print("Invalid choice. Please try again.")
-
-    return True
+    match choice:
+        case "1":
+            print(f"\n{get_joke('neutral')}")
+        case "2":
+            print(f"\n{get_joke('chuck')}")
+        case "3":
+            print(f"\n{get_joke('all')}")
+        case _:
+            print("Invalid choice. Please try again.")
 
 def main():
     # Main program loop
     print("\n=== Serohijos's Module ===")
 
-    should_continue = True
-    while should_continue:
+    while True:
         display_menu()  # Show options
         user_choice = input("Enter your choice (1-4): ")  
-        should_continue = handle_user_choice(user_choice)  # Act on choice
+        
+        if user_choice == "4":
+            print("Exiting the program...")
+            break
+        
+        handle_user_choice(user_choice)  # Act on choice
 
 # Start the program
 main()
