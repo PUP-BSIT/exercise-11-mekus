@@ -43,8 +43,7 @@ def handle_user_choice(choice):
         case 3:
             modules.jundam_main()
         case 4:
-            # TODO: Implement Olazo's module
-            pass
+            modules.olazo_main()  
         case 5:
             # TODO: Implement Serohijo's module
             pass
