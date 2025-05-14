@@ -53,4 +53,3 @@ def agulto_main():
                        "or press Enter for a random category: ").strip().lower()
     
     get_workout(user_input)
-
