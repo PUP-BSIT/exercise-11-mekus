@@ -7,7 +7,6 @@ VALID_JOKE_TYPES = ('neutral', 'chuck', 'all')
 # Default joke type to use when no input is provided
 DEFAULT_JOKE_TYPE = 'all'
 
-
 def get_joke(joke_type: str = DEFAULT_JOKE_TYPE) -> str:
     # Check if the provided joke type is valid
     if joke_type not in VALID_JOKE_TYPES:
@@ -18,7 +17,6 @@ def get_joke(joke_type: str = DEFAULT_JOKE_TYPE) -> str:
     # Return a joke from pyjokes using the specified (or corrected) type
     return pyjokes.get_joke(language='en', category=joke_type)
 
-
 def display_menu() -> None:
     # Show menu options to the user
     print("\nOptions:")
@@ -26,7 +24,6 @@ def display_menu() -> None:
     print("2. Get a Chuck Norris joke")
     print("3. Get any joke")
     print("4. Exit")
-
 
 def handle_user_choice(choice: str) -> bool:
     # Execute action based on user input
@@ -44,7 +41,6 @@ def handle_user_choice(choice: str) -> bool:
 
     return True
 
-
 def main() -> None:
     # Main program loop
     print("\n=== Serohijos's Module ===")
@@ -54,7 +50,6 @@ def main() -> None:
         display_menu()  # Show options
         user_choice = input("Enter your choice (1-4): ")  
         should_continue = handle_user_choice(user_choice)  # Act on choice
-
 
 # Start the program
 main()
