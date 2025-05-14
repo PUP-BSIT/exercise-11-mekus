@@ -35,8 +35,7 @@ def handle_user_choice(choice):
     """Handles the user's choice and calls the corresponding module."""
     match choice:
         case 1:
-            # TODO: Implement Agulto's module
-            pass
+            modules.agulto_main()
         case 2:
             # TODO: Implement Dazo's module
             pass
