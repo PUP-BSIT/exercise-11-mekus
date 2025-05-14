@@ -21,9 +21,9 @@ def get_user_choice():
         # Check if the choice is valid
         if 1 <= choice <= 6:
             return choice  # Return the valid choice
-        else:
-            # If the choice is not valid, print an error message
-            print("Invalid choice! Please select a number between 1 and 6.")
+        
+        # If the choice is not valid, print an error message
+        print("Invalid choice! Please select a number between 1 and 6.")
     except ValueError:
         # Handle the case where the input is not a number
         print("Invalid input! Please enter a number.")
