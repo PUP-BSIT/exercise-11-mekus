@@ -1,3 +1,8 @@
-__pycache__/   # Ignore Python bytecode cache directory
-.venv/         # Ignore local virtual environment folder
-*.pyc          # Ignore compiled Python files
+# Ignore Python bytecode cache directory
+__pycache__/   
+
+# Ignore local virtual environment folder
+.venv/         
+
+# Ignore compiled Python files
+*.pyc          
