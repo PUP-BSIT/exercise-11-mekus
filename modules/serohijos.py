@@ -1,3 +1,4 @@
+import os
 import pyjokes
 import random
 
@@ -28,11 +29,11 @@ def display_menu():
 def handle_user_choice(choice):
     # Execute action based on user input
     match choice:
-        case "1":
+        case 1:
             print(f"\n{get_joke('neutral')}")
-        case "2":
+        case 2:
             print(f"\n{get_joke('chuck')}")
-        case "3":
+        case 3:
             print(f"\n{get_joke('all')}")
         case _:
             print("Invalid choice. Please try again.")
@@ -42,12 +43,13 @@ def serohijos_main():
     print("\n=== Serohijos's Module ===")
 
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         display_menu()  # Show options
-        user_choice = input("Enter your choice (1-4): ")  
+        user_choice = int(input("Enter your choice (1-4): "))  
         
-        if user_choice == "4":
+        if user_choice == 4:
             print("Exiting the program...")
             break
         
         handle_user_choice(user_choice)  # Act on choice
-        
+        input("\nPress Enter to return to continue..") 
