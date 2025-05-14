@@ -50,6 +50,4 @@ def main():
             break
         
         handle_user_choice(user_choice)  # Act on choice
-
-# Start the program
-main()
+        
