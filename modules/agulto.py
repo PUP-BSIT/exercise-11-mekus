@@ -6,6 +6,9 @@ import pyfiglet
 # Initialize colorama
 init(autoreset=True)
 
+# Constants
+WORKOUT_COUNT = 5
+
 # Define the workout categories and exercises
 WORKOUT_CATEGORIES = {
     'strength': [
@@ -31,8 +34,8 @@ def get_workout(user_input):
         user_input = random.choice(list(WORKOUT_CATEGORIES.keys()))
         print(f"{Fore.RED}Invalid or empty input.Random category")
 
-    # Get a workout based on the chosen category
-    workout = random.sample(WORKOUT_CATEGORIES[user_input], 5)  
+    # Randomly select workouts from the chosen category
+    workout = random.sample(WORKOUT_CATEGORIES[user_input], WORKOUT_COUNT)  
 
     print(f"\n{Fore.CYAN}Here's your workout for today:{Style.RESET_ALL}")
     for exercise in workout:
