@@ -1,7 +1,13 @@
+import os
 import modules
 
+def clear_screen():
+    """Clears the terminal screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
 def display_menu():
     """Displays the main menu for the Mekus modules."""
+    clear_screen()  # Clear the screen before showing the menu
     print(
         "\n === Mekus Module Menu ==="
         "\n [1] Agulto's Module"
@@ -24,15 +30,19 @@ def get_user_choice():
         
         # If the choice is not valid, print an error message
         print("Invalid choice! Please select a number between 1 and 6.")
+        input("Press Enter to try again...")  # Wait before clearing screen
+        
     except ValueError:
         # Handle the case where the input is not a number
         print("Invalid input! Please enter a number.")
-    
+        input("Press Enter to try again...")  # Wait before clearing screen
+        
     # Return None if the input is invalid
     return None
 
 def handle_user_choice(choice):
     """Handles the user's choice and calls the corresponding module."""
+    clear_screen()  # Clear the screen before running the module
     match choice:
         case 1:
             modules.agulto_main()
@@ -44,7 +54,9 @@ def handle_user_choice(choice):
             modules.olazo_main()  
         case 5:
             modules.serohijos_main()
-
+    # Wait before returning
+    input("\nPress Enter to return to the main menu...") 
+     
 def main():
     """Main function to run the Mekus modules."""
     while True:
