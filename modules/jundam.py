@@ -7,6 +7,7 @@ EMOJI_TUPLE = (":smile:", ":cry:", ":heart:", ":fire:", ":thumbs_up:")
 def say_hello(user_message):
     """Picks a random emoji and adds it to the user's message."""
     
+    # Pick one emoji randomly from the tuple
     chosen_emoji = random.choice(EMOJI_TUPLE)
     
     message = emoji.emojize(f"{user_message} {chosen_emoji}", language='alias')
