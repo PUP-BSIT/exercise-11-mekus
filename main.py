@@ -37,8 +37,7 @@ def handle_user_choice(choice):
         case 1:
             modules.agulto_main()
         case 2:
-            # TODO: Implement Dazo's module
-            pass
+            modules.dazo_main()
         case 3:
             modules.jundam_main()
         case 4:
