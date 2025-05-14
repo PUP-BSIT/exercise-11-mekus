@@ -37,7 +37,7 @@ def handle_user_choice(choice):
         case _:
             print("Invalid choice. Please try again.")
 
-def main():
+def serohijos_main():
     # Main program loop
     print("\n=== Serohijos's Module ===")
 
